@@ -3,7 +3,7 @@
 ### Team members
 |Name|Github|Photo|
 |---|---|---|
-|Matthew|m5matthew||
+|Matthew Wang|m5matthew||
 |Anirudh Balasubramaniam|	anirudhnkl||
 |Rucha Patki|	ruchapatki||
 |Rishan Girish|	rishan10||
