@@ -3,10 +3,10 @@
 ### Team members
 |Name|Github|Photo|
 |---|---|---|
-|Matthew Wang|m5matthew|<img src="/images/matt.jpg" width="48">|
-|Anirudh Balasubramaniam|anirudhnkl|![ani](/images/ani.png?raw=true "Optional Title")|
-|Rucha Patki|ruchapatki|![rucha](/images/rucha.jpg?raw=true "Optional Title")|
-|Rishan Girish|	rishan10|![rishan](/images/rishan.jpg?raw=true "Optional Title")|
+|Matthew Wang|m5matthew|<img src="/images/matt.jpg" width="100">|
+|Anirudh Balasubramaniam|anirudhnkl|<img src="/images/ani.png" width="100">|
+|Rucha Patki|ruchapatki|<img src="/images/rucha.jpg" width="100">|
+|Rishan Girish|	rishan10|<img src="/images/rishan.jpg" width="100">|
 
 ### Section
 We will be attending the **12 PM** section
