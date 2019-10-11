@@ -5,7 +5,7 @@
 |---|---|---|
 |Matthew Wang|m5matthew|<img src="/images/matt.jpg" width="100">|
 |Anirudh Balasubramaniam|anirudhnkl|<img src="/images/ani.png" width="100">|
-|Rucha Patki|ruchapatki|<img src="/images/rucha.jpg" width="150">|
+|Rucha Patki|ruchapatki|<img src="/images/rucha.jpg" width="100">|
 |Rishan Girish|	rishan10|<img src="/images/rishan.jpg" width="100">|
 
 ### Section
