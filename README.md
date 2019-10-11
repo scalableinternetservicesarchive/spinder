@@ -1,11 +1,11 @@
 # spinder
 
-# Team members
+### Team members
 |Name|Github|Photo|
 |---|---|---|
 |Matthew|m5matthew||
 
-# Section
+### Section
 We will be attending the **12 PM** section
 
-# Our project
+### Our project
