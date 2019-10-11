@@ -5,7 +5,7 @@
 |---|---|---|
 |Matthew|m5matthew||
 |Anirudh Balasubramaniam|	anirudhnkl||
-|Rucha Pakti|	ruchapatki||
+|Rucha Patki|	ruchapatki||
 |Rishan Girish|	rishan10||
 
 ### Section
