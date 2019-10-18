@@ -1,4 +1,3 @@
-require "rake"
-require File.expand_path("/spinder/config/application.rb", __FILE__)
+require_relative 'spinder/config/application'
 
-spinder::Application.load_defaults
+Rails.application.load_tasks
