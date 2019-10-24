@@ -7,9 +7,11 @@ h1 {
 
 .header {
     display: flex;
+    position: absolute;
     justify-content: space-between;
     background-color: black;
     width: 100%;
+    opacity: 0.8;
 }
 
 .button-container {
