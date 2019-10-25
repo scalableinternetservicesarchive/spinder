@@ -527,3 +527,61 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 77ms (Views: 41.9ms | ActiveRecord: 2.8ms | Allocations: 17472)
 
 
+Started GET "/" for 131.179.60.228 at 2019-10-25 20:38:30 +0000
+Cannot render console from 131.179.60.228! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 821.3ms | Allocations: 1249309)
+Completed 200 OK in 846ms (Views: 840.6ms | ActiveRecord: 0.0ms | Allocations: 1259514)
+
+
+Started GET "/" for 131.179.60.228 at 2019-10-25 20:38:33 +0000
+Cannot render console from 131.179.60.228! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1588)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 5602)
+
+
+Started GET "/" for 131.179.60.228 at 2019-10-25 20:38:33 +0000
+Cannot render console from 131.179.60.228! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1573)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 5556)
+
+
+Started GET "/" for 131.179.60.228 at 2019-10-25 20:41:17 +0000
+Cannot render console from 131.179.60.228! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 4.0ms | Allocations: 4247)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/ubuntu/environment/spinder/public/packs
+Completed 200 OK in 4348ms (Views: 4347.2ms | ActiveRecord: 0.0ms | Allocations: 11946)
+
+
+Started GET "/" for 131.179.60.228 at 2019-10-25 20:41:23 +0000
+Cannot render console from 131.179.60.228! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1554)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 5525)
+
+
+Started GET "/" for 131.179.60.228 at 2019-10-25 20:41:23 +0000
+Cannot render console from 131.179.60.228! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1542)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 5498)
+
+
