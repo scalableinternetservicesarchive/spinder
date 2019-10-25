@@ -4,7 +4,7 @@
         <h1>spinder</h1>
     </div>
     <div class="button-container">
-        <button type="button">Log in</button>
+        <%= link_to '<button type="button">Log in</button>'.html_safe, new_user_session_path %>
     </div>
 </div>
 <img src="/assets/headphones.png" width="100%">
