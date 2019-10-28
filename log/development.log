@@ -585,3 +585,176 @@ Processing by PagesController#show as HTML
 Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 5498)
 
 
+Started GET "/" for 131.179.60.228 at 2019-10-25 20:46:19 +0000
+Cannot render console from 131.179.60.228! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1542)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 5496)
+
+
+Started GET "/" for 131.179.60.228 at 2019-10-25 20:46:20 +0000
+Cannot render console from 131.179.60.228! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1542)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 5494)
+
+
+Started GET "/" for 131.179.60.228 at 2019-10-25 20:46:21 +0000
+Cannot render console from 131.179.60.228! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1542)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 5494)
+
+
+Started GET "/" for 131.179.50.231 at 2019-10-25 20:59:06 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1542)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 5516)
+
+
+Started GET "/users/sign_in" for 131.179.50.231 at 2019-10-25 20:59:08 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 634)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 31.5ms | Allocations: 9070)
+Completed 200 OK in 55ms (Views: 42.7ms | ActiveRecord: 0.7ms | Allocations: 20904)
+
+
+Started POST "/users/sign_in" for 131.179.50.231 at 2019-10-25 20:59:15 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GVGPcRnrmErr/K6mwoMoVo+ORFG9MKByjLvaBwC9ifcwdsyDBbY7oJPNxk9ipr6gb1aJH1OJlliegLCxbcEzPg==", "user"=>{"email"=>"ruchapatki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ruchapatki@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.6ms | Allocations: 2945)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"GVGPcRnrmErr/K6mwoMoVo+ORFG9MKByjLvaBwC9ifcwdsyDBbY7oJPNxk9ipr6gb1aJH1OJlliegLCxbcEzPg==", "user"=>{"email"=>"ruchapatki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1025)
+Completed 200 OK in 168ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 6933)
+
+
+Started POST "/users/sign_in" for 131.179.50.231 at 2019-10-25 20:59:20 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"qKmtjhCk1SyBMphKKIo1ZmBuFIx1QasTFwaXBRf1mLYmUO+UJUBrQR6yiYLt560UIafJCqsqpX38UqCY1aeQ+w==", "user"=>{"email"=>"ruchapatki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ruchapatki@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.1ms | Allocations: 1845)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"qKmtjhCk1SyBMphKKIo1ZmBuFIx1QasTFwaXBRf1mLYmUO+UJUBrQR6yiYLt560UIafJCqsqpX38UqCY1aeQ+w==", "user"=>{"email"=>"ruchapatki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1019)
+Completed 200 OK in 160ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 5679)
+
+
+Started POST "/users/sign_in" for 131.179.50.231 at 2019-10-25 20:59:30 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"xIAbwDZHohf44pgzh41YLjqNBS5O+aPjny1Aasai5HFKeVnaA6McemdiiftC4MBce0TYqJCSrY10eXf3BPDsPA==", "user"=>{"email"=>"ruchapatki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ruchapatki@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.1ms | Allocations: 1838)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"xIAbwDZHohf44pgzh41YLjqNBS5O+aPjny1Aasai5HFKeVnaA6McemdiiftC4MBce0TYqJCSrY10eXf3BPDsPA==", "user"=>{"email"=>"ruchapatki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1018)
+Completed 200 OK in 160ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 5678)
+
+
+Started GET "/users/sign_in" for 131.179.50.231 at 2019-10-25 20:59:36 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1030)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 5773)
+
+
+Started GET "/" for 131.179.50.231 at 2019-10-25 20:59:38 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 23.4ms | Allocations: 1549)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 5528)
+
+
+Started DELETE "/users/sign_out" for 131.179.50.231 at 2019-10-25 20:59:39 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r5kC5WZBcav2aPEcjx2nu9scjsJWKYHoEMtUdrAPrnQhYED/U6XPxmno4NRKcD/JmtVTRIhCj4b7n2Prcl2mOQ=="}
+Redirected to https://10ccf03a5dee4ea7a4cc29f411524201.vfs.cloud9.us-east-2.amazonaws.com/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 470)
+
+
+Started GET "/" for 131.179.50.231 at 2019-10-25 20:59:40 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1542)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 5522)
+
+
+Started GET "/users/sign_in" for 131.179.50.231 at 2019-10-25 20:59:41 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1030)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 5769)
+
+
+Started POST "/users/sign_in" for 131.179.50.231 at 2019-10-25 20:59:47 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"mch9XSl1pu3OXWFGnvSaC+BCji2Qu/YxKc0n51hPkSCw7z6vNSgFB7ZsCa8+0Qz9AJpDY34CwBs79k1RNTMr6Q==", "user"=>{"email"=>"ruchapatki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ruchapatki@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.1ms | Allocations: 1849)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"mch9XSl1pu3OXWFGnvSaC+BCji2Qu/YxKc0n51hPkSCw7z6vNSgFB7ZsCa8+0Qz9AJpDY34CwBs79k1RNTMr6Q==", "user"=>{"email"=>"ruchapatki@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1018)
+Completed 200 OK in 161ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 5712)
+
+
+Started GET "/users/sign_in" for 131.179.50.231 at 2019-10-25 20:59:49 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered /home/ubuntu/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1030)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 5767)
+
+
+Started GET "/" for 131.179.50.231 at 2019-10-25 20:59:50 +0000
+Cannot render console from 131.179.50.231! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"about"}
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1542)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 5519)
+
+
