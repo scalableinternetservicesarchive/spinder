@@ -9,6 +9,7 @@ gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.4', require: false
 gem 'travis', '1.8.8'
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
@@ -20,7 +21,6 @@ group :development do
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
-  gem 'devise'
 end
 
 group :test do
