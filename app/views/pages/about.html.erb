@@ -6,6 +6,7 @@
     <div class="button-container">
         <%= link_to '<button type="button">Log in</button>'.html_safe, new_user_session_path %>
         <%= link_to '<button type="button">Sign out</button>'.html_safe, destroy_user_session_path, :method => 'delete'%>
+        <%= link_to '<button type="button">To music</button>'.html_safe,'pages/music'%>
     </div>
 </div>
 <%= image_tag("headphones.png", :width => "100%") %>
