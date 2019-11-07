@@ -1,26 +1,22 @@
-body {
-    margin: 0;
-}
-h1 {
-    color: white;
-}
-
-.header {
+.music-body {
+    height:100vh;
     display: flex;
-    position: absolute;
     justify-content: space-between;
-    background-color: black;
-    width: 100%;
-    opacity: 0.8;
+    align-items:center;
+    padding: 0 50px 0;
+    background-image: url("night_fade.png");
 }
-
-.button-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 20px;
+  
+.arrow:hover {
+    background-color: #ddd;
+    color: black;
 }
-
-.title-container {
-    padding-left: 20px;
+  
+.arrow {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    color: black;
+    border-radius: 50%;
 }

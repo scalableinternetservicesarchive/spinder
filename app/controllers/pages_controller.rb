@@ -1,9 +1,14 @@
 class PagesController < ApplicationController
-    def show
-        render template: "pages/about"
+    def home
     end
     
-    def to_music
-        render template: "pages/music"
+    def music
+    end
+
+    def profile
+        if current_user
+            @email = current_user.email
+        else
+        end
     end
 end

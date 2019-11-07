@@ -1,0 +1,41 @@
+.navbar-title {
+    letter-spacing: 3px;
+    font-size: 2em;
+    color: white;
+    margin: 0;
+}
+
+.navbar-container {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    background-color: black;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.navbar-button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.navbar-title-container {
+    padding: 20px 0px 20px 20px;
+}
+
+.navbar-button {
+    background: none;
+	color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+    cursor: pointer;
+    padding: 0 10px 0px;
+}
+
+.navbar-button:hover{
+    padding-bottom: 10px;
+    color: lightslategrey;
+}

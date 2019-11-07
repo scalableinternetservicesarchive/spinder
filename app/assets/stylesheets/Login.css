@@ -1,0 +1,17 @@
+.login-background {
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    background-image: url("night_fade.png");
+}
+
+.login-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    padding: 60px;
+}
