@@ -1,0 +1,2 @@
+class SongInfo < ApplicationRecord
+end
