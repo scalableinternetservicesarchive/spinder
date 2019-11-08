@@ -2,6 +2,6 @@
     <p class="user"> User: <%= @email %> </p>
     <p> Songs: </p>
     <% @songs.each do |s| %>
-        <%= s.name %>
+        <%= s["name"] %>
     <% end %>
 </div>
