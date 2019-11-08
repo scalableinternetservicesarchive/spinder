@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     end
     
     def music
+        @song = SongInfo.order('RANDOM()').first
     end
 
     def profile
