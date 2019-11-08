@@ -1,7 +1,14 @@
-<div>
-    <p class="user"> User: <%= @email %> </p>
-    <p> Songs: </p>
-    <% @songs.each do |s| %>
-        <%= s["name"] %>
-    <% end %>
+<div class="profile-container">
+   <!-- <div class="profile-user-container">
+       
+    </div> -->
+    <div class="profile-songs-container">
+        <p class="profile-user"><u><%= @email %></u></p>
+        <p class="profile-song-header"> Songs: </p>
+        <ul>
+            <% @songs.each do |s| %>
+                <li class="profile-song-title"><%= s["name"] %></li>
+            <% end %>
+        </ul>
+    </div>
 </div>
