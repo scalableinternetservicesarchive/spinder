@@ -2,7 +2,7 @@
     <%= button_to 'Dislike', pages_music_path, method: :get %>
     <!-- <a href="#" class="arrow">&#8249;</a> -->
     <div class="music-song-container">
-        <img src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwjzqMybt9nlAhXpHjQIHUKvAZgQjRx6BAgBEAQ&url=https%3A%2F%2Fmuppet.fandom.com%2Fwiki%2FThe_Best_of_Elmo_(album)&psig=AOvVaw0kBkwvbYmmBFuVDwd5Pu5s&ust=1573261841366739">
+        <%= image_tag(@song['image_url'], :width => "50%") %>
         <p class="music-title"><%= @song['name'] %></p>
         <p class="music-artist"><%= @song['artist'] %></p>
     </div>
