@@ -10,9 +10,19 @@
 # t.string "name"
 # t.string "artist"
 # t.string "image_url"
-SongInfo.create({
-    song_id: "1",
-    name: "Test song",
-    artist: "Matthew Wang",
-    image_url: "hippo"
-})
+
+require "json"
+
+song_data = JSON.parse(File.read(File.dirname(__FILE__) + "/out.json"))["items"]
+
+for song in song_data do
+    
+    SongInfo.create({
+        song_id: song["track"]["id"],
+        name: song["track"]["name"],
+        artist: song["track"]["artists"][0]["name"],
+        sample_url: song["track"]["preview_url"],
+        image_url: song["track"]["album"]["images"][0]["url"]
+    })
+      
+   end
