@@ -1,3 +1,7 @@
 <div>
     <p class="user"> User: <%= @email %> </p>
+    <p> Songs: </p>
+    <% @songs.each do |s| %>
+        <%= s.name %>
+    <% end %>
 </div>

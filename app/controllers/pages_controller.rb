@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     def profile
         if current_user
             @email = current_user.email
-            #@songs = ActiveRecord::Base.connection.execute("SELECT l.songs FROM songs l JOIN song_infos r ON songs.song_id = song_infos")
+            @songs = ActiveRecord::Base.connection.execute("SELECT r.name FROM songs l JOIN song_infos r ON r.song_id = l.song_id")
         else
         end
     end
