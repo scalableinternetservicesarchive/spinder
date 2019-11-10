@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
     def home
     end
-    
+
     def music
         @song = SongInfo.order('RANDOM()').first
     end
