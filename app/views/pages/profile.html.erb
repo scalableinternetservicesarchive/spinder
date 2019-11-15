@@ -10,5 +10,12 @@
                 <li class="profile-song-title"><%= s["name"] %></li>
             <% end %>
         </ul>
+
+        <p class="profile-song-header"> Matches: </p>
+        <ul>
+            <% @matches.each do |s| %>
+                <li class="matches"> Name: <%= s["user_email"]  %> Count: <%= s["cnt"]%></li>
+            <% end %>
+        </ul>
     </div>
 </div>
