@@ -1,21 +1,49 @@
-<div class="profile-container">
-   <!-- <div class="profile-user-container">
-       
-    </div> -->
-    <div class="profile-songs-container">
-        <p class="profile-user"><u><%= @email %></u></p>
-        <p class="profile-song-header"> Songs: </p>
-        <ul>
-            <% @songs.each do |s| %>
-                <li class="profile-song-title"><%= s["name"] %></li>
-            <% end %>
-        </ul>
-
-        <p class="profile-song-header"> Matches: </p>
-        <ul>
-            <% @matches.each do |s| %>
-                <li class="matches"> Name: <%= s["user_email"]  %> Count: <%= s["cnt"]%></li>
-            <% end %>
-        </ul>
+<div class="profile-background">
+    <div class="profile-container">
+        <div class="profile-card-container">
+            <h1 class="profile-user"><%= @email %></h1>        
+        </div>
+        <div class="profile-row-container">
+            <div class="profile-card-container">
+                <h3 class="profile-song-header"> Liked Songs </h3>
+                <table class="table-fill">
+                    <thead>
+                        <tr>
+                            <th class="text-left"> Title </th>
+                            <th class="text-left"> Artist </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @songs.each do |s| %>
+                            <tr>
+                                <td class="text-left"><%= s["name"] %></td>
+                                <td class="text-left"><%= s["artist"] %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="profile-card-container">
+                <h3 class="profile-song-header"> Matches </h3>
+                <table class="table-fill">
+                    <thead>
+                        <tr>
+                            <th class="text-left"> Name </th>
+                            <th class="text-left"> Number of Matched Songs </th>
+                            <th class="text-left"> Profile </th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <% @matches.each do |s| %>
+                            <tr class="matches"> 
+                                <td class="text-left"> <%= s["user_email"]  %> </td>
+                                <td class="text-left"> <%= s["cnt"]%> </td>
+                                <td class="text-left"> <%= link_to "View Profile", {:controller => "pages", :action => "profile", :user_email => s["user_email"]} %> </td>
+                            </tr> 
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

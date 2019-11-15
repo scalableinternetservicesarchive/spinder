@@ -29,7 +29,7 @@ class PagesController < ApplicationController
 
             # Get all the songs that a user likes
             @songs = ActiveRecord::Base.connection.execute("""
-                SELECT r.name, r.song_id 
+                SELECT r.name, r.song_id, r.artist 
                 FROM songs l JOIN song_infos r ON r.song_id = l.song_id 
                 WHERE l.user_email = '#{params["user_email"]}';
             """)
