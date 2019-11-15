@@ -1,5 +1,5 @@
 <div class="music-body">
-    <%= button_to 'Dislike', pages_music_path, method: :get %>
+    <%= link_to '<button type="button">Dislike</button>'.html_safe, {:controller => "pages", :action => "music", :user_email => current_user.email} %>
     <!-- <a href="#" class="arrow">&#8249;</a> -->
     <div class="music-song-container">
         <%= image_tag(@song['image_url'], :width => "50%") %>
