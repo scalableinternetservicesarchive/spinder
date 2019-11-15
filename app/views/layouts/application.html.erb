@@ -26,8 +26,9 @@
               <%= link_to '<button class="navbar-button" type="button">Log in</button>'.html_safe, new_user_session_path %>
           <% end %>
           <% if user_signed_in? %>
-              <%= link_to '<button class="navbar-button" type="button">Profile</button>'.html_safe, pages_profile_path %>
+              <%= link_to '<button class="navbar-button" type="button">Profile</button>'.html_safe, {:controller => "pages", :action => "profile", :user_email => current_user.email} %>
               <%= link_to '<button class="navbar-button" type="button">Music</button>'.html_safe, pages_music_path %>
+              <%= link_to '<button class="navbar-button" type="button">Messages</button>'.html_safe, pages_messages_path %>
               <%= link_to '<button class="navbar-button" type="button">Sign out</button>'.html_safe, destroy_user_session_path, :method => 'delete'%>
           <% end %>
       </div>

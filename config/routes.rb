@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   
   get 'pages/music' => 'pages#music'
   get 'pages/profile' => 'pages#profile'
+  get 'pages/messages' => 'pages#messages'
   post 'song/like' => 'song#like'
 end
