@@ -4,12 +4,13 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :conversations do
-    resources :messages
-  end
+
+resources :conversations do
+  resources :messages
+end
 
   get 'pages/music' => 'pages#music'
   get 'pages/profile' => 'pages#profile'
-  get 'pages/messages' => 'pages#messages'
+  get 'pages/messages' => 'conversations#index'
   post 'song/like' => 'song#like'
 end
