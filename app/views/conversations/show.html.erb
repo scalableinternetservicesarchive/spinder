@@ -1,11 +1,20 @@
 <div class="conversation">
   <h1> <%= @conversation.subject %> </h1>
 
-  <% @conversation.receipts.each do |receipt| %>
+  <% @conversation.receipts_for(current_user).each do |receipt| %>
     <div class="messages">
       <div><%= receipt.message.sender.name %> says: </div>
-      <%= receipt.message.body %>
+      <p><%= receipt.message.body %></p>
       <% end %>
     </div>
 
 </div>
+
+
+<%= form_tag conversation_messages_path(@conversation), method: :post do %>
+<div>
+  <%= text_area_tag :body %>
+</div>
+
+  <%= submit_tag %>
+<%end%>
