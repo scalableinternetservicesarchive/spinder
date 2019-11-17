@@ -1,4 +1,11 @@
 <div class="conversation">
   <h1> <%= @conversation.subject %> </h1>
 
+  <% @conversation.receipts.each do |receipt| %>
+    <div class="messages">
+      <div><%= receipt.message.sender.name %> says: </div>
+      <%= receipt.message.body %>
+      <% end %>
+    </div>
+
 </div>
