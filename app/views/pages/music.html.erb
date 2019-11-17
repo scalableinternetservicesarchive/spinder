@@ -1,11 +1,9 @@
 <div class="music-body">
-    <%= link_to '<button type="button">Dislike</button>'.html_safe, {:controller => "pages", :action => "music", :user_email => current_user.email} %>
-    <!-- <a href="#" class="arrow">&#8249;</a> -->
+     <%= link_to image_tag("thumbsdown.png", size: "300x200").html_safe, {:controller => "pages", :action => "music", :user_email => current_user.email} %>
     <div class="music-song-container">
         <%= image_tag(@song['image_url'], :width => "50%") %>
         <p class="music-title"><%= @song['name'] %></p>
         <p class="music-artist"><%= @song['artist'] %></p>
     </div>
-    <!-- <a href="#" class="arrow">&#8250;</a> -->
-    <%= button_to 'Like', {:controller => "song", :action => "like", :song_id => @song["song_id"]} , :method=>:post %>
+    <%= link_to image_tag("thumbsup.png", size: "300x200").html_safe, {:controller => "song", :action => "like", :song_id => @song["song_id"]}, :method=>:post %>
 </div>
