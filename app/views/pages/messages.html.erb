@@ -1,1 +1,10 @@
-<h1> Hello </h1>
+<div class="messages">
+
+  <h1> Messages </h1>
+
+  <% @conversations.each do |conversation| %>
+    <div>
+      <%= link_to conversation.subject, conversation_path(conversation)%>.
+    </div>
+  <% end %>
+</div>

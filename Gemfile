@@ -10,6 +10,7 @@ gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.4', require: false
 gem 'travis', '1.8.8'
 gem 'devise'
+gem 'mailboxer', github: 'mailboxer/mailboxer'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'

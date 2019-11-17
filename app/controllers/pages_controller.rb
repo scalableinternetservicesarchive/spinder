@@ -7,11 +7,11 @@ class PagesController < ApplicationController
 
         # Get all songs from database
         @songs = ActiveRecord::Base.connection.execute("""
-            SELECT r.name, r.song_id 
-            FROM songs l JOIN song_infos r ON r.song_id = l.song_id 
+            SELECT r.name, r.song_id
+            FROM songs l JOIN song_infos r ON r.song_id = l.song_id
             WHERE l.user_email = '#{params["user_email"]}';
         """)
-        
+
         # Extract songs that user has already liked
         song_liked = []
         for i in @songs
@@ -29,8 +29,8 @@ class PagesController < ApplicationController
 
             # Get all the songs that a user likes
             @songs = ActiveRecord::Base.connection.execute("""
-                SELECT r.name, r.song_id, r.artist 
-                FROM songs l JOIN song_infos r ON r.song_id = l.song_id 
+                SELECT r.name, r.song_id, r.artist
+                FROM songs l JOIN song_infos r ON r.song_id = l.song_id
                 WHERE l.user_email = '#{params["user_email"]}';
             """)
 
@@ -42,13 +42,21 @@ class PagesController < ApplicationController
 
             # Run query that computes the matches that a user has, sorted from greatest to least
             @matches = ActiveRecord::Base.connection.execute("""
-                SELECT user_email, COUNT(*) AS cnt 
-                FROM songs 
-                WHERE (song_id IN ('#{song_id_arr.join("', '")}')) AND user_email != '#{params["user_email"]}' 
-                GROUP BY user_email 
+                SELECT user_email, COUNT(*) AS cnt
+                FROM songs
+                WHERE (song_id IN ('#{song_id_arr.join("', '")}')) AND user_email != '#{params["user_email"]}'
+                GROUP BY user_email
                 ORDER BY cnt DESC;
             """)
         else
         end
+    end
+
+    def messages
+      @conversations = current_user.mailbox.conversations
+    end
+
+    def show
+      @conversation = current_user.mailbox.conversations.find(params[:id])
     end
 end
