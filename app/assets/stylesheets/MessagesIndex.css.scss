@@ -1,0 +1,49 @@
+.messages-index-background {
+    background-image: url(asset_path("night_fade.png"));
+    overflow: scroll;
+    background-size: cover;
+}
+
+.messages-container {
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.conversations-container {
+    color: #27017E;
+}
+
+.new-conversation-container{
+    display: flex;
+    flex-direction: column;
+    max-height: 65vh;
+    max-width: 15vh;
+    background-color: #8CB15E;
+    padding: 10px 50px 10px;
+    border-radius: 5px;
+    margin: 50px 10px 0px;
+    
+    #new-button a:link { 
+        text-decoration:none; 
+    }
+}
+
+.existing-messages-container {
+    display: inline-flex;
+    flex-direction: column;
+    max-height: 65vh;
+    overflow: scroll;
+    background-color: transparent;
+    padding: 10px 0px 10px;
+    border-radius: 5px;
+    margin: 20px 10px 0px;
+}
+
+.single-message-container {
+    background-color: #353435;
+    max-height: 65vh;
+    padding: 10px 200px 10px;
+    border-radius: 5px;
+    margin: 5px 0px 0px;
+}

@@ -1,18 +1,23 @@
-<div class="conversations">
+<%= stylesheet_link_tag "MessagesIndex.css" %>
+<div class="messages-index-background">
 
-  <div>
-    <p> space </p>
-    <p> space </p>
-  </div>
-
-  <h1> Conversations </h1>
-
-  <% @conversations.each do |conversation| %>
-    <div>
-      <%= link_to conversation.subject, conversation_path(conversation) %>.
+  <div class="messages-container">
+    <div class="conversations-container">
+      <h1> Conversations </h1>
     </div>
-  <% end %>
-  <div>
-    <%= link_to "New Conversation", new_conversation_path %>
+    
+    <div class="new-conversation-container">
+      <div id = "new-button">
+        <%= link_to "New Conversation", new_conversation_path, {:style=>'color:#F5F1FF;'} %>
+      </div>
+    </div>
+  
+    <div class="existing-messages-container">
+      <% @conversations.each do |conversation| %>
+        <div class="single-message-container">
+          <%= link_to conversation.subject, conversation_path(conversation), {:style=>'color:#F5F1FF;'} %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
