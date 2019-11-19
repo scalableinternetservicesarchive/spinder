@@ -6,43 +6,52 @@
         <div class="profile-row-container">
             <div class="profile-card-container">
                 <h3 class="profile-song-header"> Liked Songs </h3>
-                <table class="table-fill">
-                    <thead>
-                        <tr>
-                            <th class="text-left"> Title </th>
-                            <th class="text-left"> Artist </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% @songs.each do |s| %>
+                <% unless @songs.blank? %>
+                    <table class="table-fill">
+                        <thead>
                             <tr>
-                                <td class="text-left"><%= s["name"] %></td>
-                                <td class="text-left"><%= s["artist"] %></td>
+                                <th class="text-left"> Title </th>
+                                <th class="text-left"> Artist </th>
                             </tr>
-                        <% end %>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <% @songs.each do |s| %>
+                                <tr>
+                                    <td class="text-left"><%= s["name"] %></td>
+                                    <td class="text-left"><%= s["artist"] %></td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                <% else %>
+                    <p>Like songs to view them here!</p>
+                <% end %>
             </div>
+
             <div class="profile-card-container">
                 <h3 class="profile-song-header"> Matches </h3>
-                <table class="table-fill">
-                    <thead>
-                        <tr>
-                            <th class="text-left"> Name </th>
-                            <th class="text-left"> Number of Matched Songs </th>
-                            <th class="text-left"> Profile </th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-hover">
-                        <% @matches.each do |s| %>
-                            <tr class="matches"> 
-                                <td class="text-left"> <%= s["user_email"]  %> </td>
-                                <td class="text-left"> <%= s["cnt"]%> </td>
-                                <td class="text-left"> <%= link_to "View Profile", {:controller => "pages", :action => "profile", :user_email => s["user_email"]} %> </td>
-                            </tr> 
-                        <% end %>
-                    </tbody>
-                </table>
+                <% unless @matches.blank? %>
+                    <table class="table-fill">
+                        <thead>
+                            <tr>
+                                <th class="text-left"> Name </th>
+                                <th class="text-left"> Number of Matched Songs </th>
+                                <th class="text-left"> Profile </th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-hover">
+                            <% @matches.each do |s| %>
+                                <tr class="matches"> 
+                                    <td class="text-left"> <%= s["user_email"]  %> </td>
+                                    <td class="text-left"> <%= s["cnt"]%> </td>
+                                    <td class="text-left"> <%= link_to "View Profile", {:controller => "pages", :action => "profile", :user_email => s["user_email"]} %> </td>
+                                </tr> 
+                            <% end %>
+                        </tbody>
+                    </table>
+                <% else %>
+                    <p>Like songs to find matches!</p>
+                <% end %>
             </div>
         </div>
     </div>
