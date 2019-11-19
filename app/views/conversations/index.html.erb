@@ -1,5 +1,10 @@
 <div class="conversations">
 
+  <div>
+    <p> space </p>
+    <p> space </p>
+  </div>
+
   <h1> Conversations </h1>
 
   <% @conversations.each do |conversation| %>
@@ -7,4 +12,7 @@
       <%= link_to conversation.subject, conversation_path(conversation) %>.
     </div>
   <% end %>
+  <div>
+    <%= link_to "New Conversation", new_conversation_path %>
+  </div>
 </div>

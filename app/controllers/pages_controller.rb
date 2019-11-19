@@ -24,6 +24,7 @@ class PagesController < ApplicationController
 
     # GET pages/profile
     def profile
+
         if current_user
             @email = params["user_email"]
 
@@ -48,6 +49,7 @@ class PagesController < ApplicationController
                 GROUP BY user_email
                 ORDER BY cnt DESC;
             """)
+            p @matches
         else
         end
     end
