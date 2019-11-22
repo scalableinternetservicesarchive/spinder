@@ -81,7 +81,7 @@
       <!-- User visits music page -->
       <request subst="true">
         <dyn_variable name="authenticity_token" xpath="/html/head/meta[@name='csrf-token']/@content"></dyn_variable>
-        <dyn_variable name="song_url" xpath="/html/body/a[@rel='nofollow']/@href"></dyn_variable>
+        <dyn_variable name="song_url" xpath="/html/body/div[@class='music-body']/a[@rel='nofollow']/@href"></dyn_variable>
         <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
       </request>
 
