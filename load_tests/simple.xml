@@ -80,17 +80,17 @@
 
       <!-- User visits music page -->
       <request subst="true">
-        <dyn_variable name="authenticity_token" ></dyn_variable> 
+        <!-- <dyn_variable name="authenticity_token" ></dyn_variable>  -->
         <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
       </request>
 
-      <!-- encode authenticity_token -->
+      <!-- encode authenticity_token
       <setdynvars 
         sourcetype="eval"
         code="fun({Pid,DynVars})->{ok,Val}=ts_dynvars:lookup(authenticity_token,DynVars),http_uri:encode(Val) end."
       >
         <var name="encoded_authenticity_token" />
-      </setdynvars>
+      </setdynvars> -->
 
       <!-- User likes a song -->
       <request subst="true">
