@@ -9,7 +9,7 @@
 
   <!-- Server side setup -->
   <servers>
-    <server host="http://spinder.e2zcqzrpxm.us-west-2.elasticbeanstalk.com" port="80" type="tcp"/>
+    <server host="http://spinder2.e2zcqzrpxm.us-west-2.elasticbeanstalk.com" port="80" type="tcp"/>
   </servers>
 
 
@@ -57,7 +57,7 @@
       <!-- User waits at login page for ~2 seconds, thinking of username and pass -->
       <thinktime value="2" random="true"></thinktime>
 
-      <!-- User creates an account -->
+      <!-- User signs in -->
       <request subst="true">
         <http url='/users/sign_in' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
