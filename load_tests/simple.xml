@@ -71,7 +71,7 @@
       <request subst="true">
         <http url='/users/sign_in' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
-          contents='"authenticity_token=%%_encoded_authenticity_token%%&amp;user%5Bemail%5D=a%%_user_id%%@test.com&amp;user%5Bpassword%5D=111111'
+          contents='authenticity_token=%%_encoded_authenticity_token%%&amp;user%5Bemail%5D=a%%_user_id%%@test.com&amp;user%5Bpassword%5D=111111'
           ></http>
       </request>
 
@@ -80,7 +80,7 @@
 
       <!-- User visits music page -->
       <request>
-        <http url='/pages/music' version='1.1' method='GET'></http>
+        <http url='/pages/music' version='1.1' method='GET' content='user_email=a0%40test.com'></http>
       </request>
 
       <!-- User likes a song -->
