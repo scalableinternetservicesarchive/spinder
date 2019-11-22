@@ -80,14 +80,23 @@
 
       <!-- User visits music page -->
       <request>
+        <dyn_variable name="authenticity_token" ></dyn_variable> 
         <http url='/pages/music?user_email=a0%40test.com' version='1.1' method='GET'></http>
       </request>
 
+      <!-- encode authenticity_token -->
+      <setdynvars 
+        sourcetype="eval"
+        code="fun({Pid,DynVars})->{ok,Val}=ts_dynvars:lookup(authenticity_token,DynVars),http_uri:encode(Val) end."
+      >
+        <var name="encoded_authenticity_token" />
+      </setdynvars>
+
       <!-- User likes a song -->
       <request>
-        <http url='/song/like' version='1.1' method='POST'
+        <http url='/song/like?song_id=0OvxrkpwsDsLit4R9RFbPV' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
-          contents='authenticity_token=%%_encoded_authenticity_token%%&amp;song_id=0OvxrkpwsDsLit4R9RFbPV'
+          contents='authenticity_token=%%_encoded_authenticity_token%%'
           ></http>
       </request>
 
