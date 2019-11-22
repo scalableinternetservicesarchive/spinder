@@ -48,19 +48,19 @@
       <request>
         <http url='/' version='1.1' method='GET'></http>
       </request>
-    
+
       <!-- User visits login page -->
       <request>
-        <dyn_variable name="authenticity_token" ></dyn_variable> 
+        <dyn_variable name="authenticity_token" ></dyn_variable>
         <http url='/users/sign_in' version='1.1' method='GET'></http>
-        
+
       </request>
 
       <!-- User waits at login page for ~2 seconds, thinking of username and pass -->
       <thinktime value="2" random="true"></thinktime>
 
       <!-- encode authenticity_token -->
-      <setdynvars 
+      <setdynvars
         sourcetype="eval"
         code="fun({Pid,DynVars})->{ok,Val}=ts_dynvars:lookup(authenticity_token,DynVars),http_uri:encode(Val) end."
       >
@@ -76,29 +76,23 @@
       </request>
 
       <!-- Waits 3 seconds for page to load -->
-      <thinktime value="3" random="true"></thinktime> 
+      <thinktime value="3" random="true"></thinktime>
 
       <!-- User visits music page -->
       <request subst="true">
-        <!-- <dyn_variable name="authenticity_token" ></dyn_variable>  -->
+        <dyn_variable name="authenticity_token" xpath="/html/head/meta[@name='csrf-token']/@content"></dyn_variable>
+        <dyn_variable name="song_url" xpath="/html/body/a[@rel='nofollow']/@href"></dyn_variable>
         <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
       </request>
 
-      <!-- encode authenticity_token
-      <setdynvars 
-        sourcetype="eval"
-        code="fun({Pid,DynVars})->{ok,Val}=ts_dynvars:lookup(authenticity_token,DynVars),http_uri:encode(Val) end."
-      >
-        <var name="encoded_authenticity_token" />
-      </setdynvars> -->
-
       <!-- User likes a song -->
       <request subst="true">
-        <http url='/song/like?song_id=0OvxrkpwsDsLit4R9RFbPV' version='1.1' method='POST'
+        <http url='%%_song_url%%' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
-          contents='authenticity_token=%%_encoded_authenticity_token%%'
+          contents='authenticity_token=%%_authenticity_token%%'
           ></http>
       </request>
+
 
     </session>
   </sessions>
