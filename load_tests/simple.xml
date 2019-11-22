@@ -40,7 +40,7 @@
   <sessions>
     <session name="http-example" probability="100" type="ts_http">
 
-      <setdynvars sourcetype="random_number" start="0" end="0">
+      <setdynvars sourcetype="random_number" start="0" end="1">
         <var name="user_id" />
       </setdynvars> 
       
@@ -48,14 +48,6 @@
       <request>
         <http url='/' version='1.1' method='GET'></http>
       </request>
-
-      <!-- encode authenticity_token -->
-      <!-- <setdynvars 
-        sourcetype="eval"
-        code="fun({Pid,DynVars})->{ok,Val}=ts_dynvars:lookup(authenticity_token,DynVars),http_uri:encode(Val) end."
-      >
-        <var name="encoded_authenticity_token" />
-      </setdynvars> -->
     
       <!-- User visits login page -->
       <request>
@@ -67,11 +59,19 @@
       <!-- User waits at login page for ~2 seconds, thinking of username and pass -->
       <thinktime value="2" random="true"></thinktime>
 
+      <!-- encode authenticity_token -->
+      <setdynvars 
+        sourcetype="eval"
+        code="fun({Pid,DynVars})->{ok,Val}=ts_dynvars:lookup(authenticity_token,DynVars),http_uri:encode(Val) end."
+      >
+        <var name="encoded_authenticity_token" />
+      </setdynvars>
+
       <!-- User signs in -->
       <request subst="true">
         <http url='/users/sign_in' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
-          contents='"authenticity_token=%%_authenticity_token%%&amp;user%5Bemail%5D=a%%_user_id%%@test.com&amp;user%5Bpassword%5D=111111'
+          contents='"authenticity_token=%%_encoded_authenticity_token%%&amp;user%5Bemail%5D=a%%_user_id%%@test.com&amp;user%5Bpassword%5D=111111'
           ></http>
       </request>
 
