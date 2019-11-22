@@ -9,7 +9,7 @@
 
   <!-- Server side setup -->
   <servers>
-    <server host="http://spinder2.e2zcqzrpxm.us-west-2.elasticbeanstalk.com" port="80" type="tcp"/>
+    <server host="www.spinder2.e2zcqzrpxm.us-west-2.elasticbeanstalk.com" port="80" type="tcp"/>
   </servers>
 
 
