@@ -17,7 +17,7 @@
   <arrivalphase phase="1" duration="30" unit="second">
   <users arrivalrate="1" unit="second"></users>
   </arrivalphase>
-  <!-- <arrivalphase phase="2" duration="30" unit="second">
+  <arrivalphase phase="2" duration="30" unit="second">
   <users arrivalrate="2" unit="second"></users>
   </arrivalphase>
   <arrivalphase phase="3" duration="30" unit="second">
@@ -25,7 +25,7 @@
   </arrivalphase>
   <arrivalphase phase="4" duration="30" unit="second">
   <users arrivalrate="8" unit="second"></users>
-  </arrivalphase> -->
+  </arrivalphase>
  </load>
 
   <options>
@@ -40,7 +40,7 @@
   <sessions>
     <session name="http-example" probability="100" type="ts_http">
 
-      <setdynvars sourcetype="random_number" start="0" end="1">
+      <setdynvars sourcetype="random_number" start="0" end="999">
         <var name="user_id" />
       </setdynvars> 
       
@@ -48,19 +48,19 @@
       <request>
         <http url='/' version='1.1' method='GET'></http>
       </request>
-    
+
       <!-- User visits login page -->
       <request>
-        <dyn_variable name="authenticity_token" ></dyn_variable> 
+        <dyn_variable name="authenticity_token" ></dyn_variable>
         <http url='/users/sign_in' version='1.1' method='GET'></http>
-        
+
       </request>
 
       <!-- User waits at login page for ~2 seconds, thinking of username and pass -->
       <thinktime value="2" random="true"></thinktime>
 
       <!-- encode authenticity_token -->
-      <setdynvars 
+      <setdynvars
         sourcetype="eval"
         code="fun({Pid,DynVars})->{ok,Val}=ts_dynvars:lookup(authenticity_token,DynVars),http_uri:encode(Val) end."
       >
@@ -76,19 +76,23 @@
       </request>
 
       <!-- Waits 3 seconds for page to load -->
-      <thinktime value="3" random="true"></thinktime> 
+      <thinktime value="3" random="true"></thinktime>
 
       <!-- User visits music page -->
-      <request>
-        <http url='/pages/music' version='1.1' method='GET' content='user_email=a0%40test.com'></http>
+      <request subst="true">
+        <dyn_variable name="authenticity_token" xpath="/html/head/meta[@name='csrf-token']/@content"></dyn_variable>
+        <dyn_variable name="song_url" xpath="/html/body/div[@class='music-body']/a[@rel='nofollow']/@href"></dyn_variable>
+        <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
       </request>
 
       <!-- User likes a song -->
-      <request>
-        <http url='/song/like' version='1.1' method='POST'
+      <request subst="true">
+        <http url='%%_song_url%%' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
-          contents='song_id=0OvxrkpwsDsLit4R9RFbPV'></http>
+          contents='authenticity_token=%%_authenticity_token%%'
+          ></http>
       </request>
+
 
     </session>
   </sessions>
