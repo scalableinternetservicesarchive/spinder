@@ -13,6 +13,7 @@ Rails.application.config.assets.precompile += %w( Music.css )
 Rails.application.config.assets.precompile += %w( Navbar.css )
 Rails.application.config.assets.precompile += %w( Profile.css )
 Rails.application.config.assets.precompile += %w( MessagesIndex.css )
+Rails.application.config.assets.precompile += %w( MessagesShow.css )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

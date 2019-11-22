@@ -1,0 +1,45 @@
+.messages-show-background {
+    background-image: url(asset_path("night_fade.png"));
+    overflow: scroll;
+    background-size: cover;
+}
+
+.messages-container {
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+}
+
+.conversation-subject{
+    padding-left: 10px;
+}
+
+.sender-bubble-container {
+    height: 10vh;
+    padding-left: 10px;
+    padding-up: 10px;
+}
+
+.message-bubble-container {
+    background-color: #353435;
+    height: max-content;
+    width: max-content;
+    padding: 7px 12px 7px;
+    border-radius: 20px;
+    margin: 5px 0px 0px;
+    color: white;
+    text-align: left;
+    
+    p {
+        margin: 0px;
+    }
+}
+
+.compose-message {
+    max-height: 65vh;
+    max-width: 20vh;
+    padding: 30px 10px 10px;
+    border-radius: 5px;
+    margin: 0px 0px 0px;
+}

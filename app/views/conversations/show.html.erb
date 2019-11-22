@@ -1,20 +1,40 @@
-<div class="conversation">
-  <h1> <%= @conversation.subject %> </h1>
+<%= stylesheet_link_tag "MessagesShow.css" %>
 
-  <% @conversation.receipts_for(current_user).each do |receipt| %>
-    <div class="messages">
-      <div><%= receipt.message.sender.name %> says: </div>
-      <p><%= receipt.message.body %></p>
+<div class="messages-show-background">
+  <div class="messages-container">
+    
+    
+    <div class="conversation">
+      
+      <div class="conversation-subject">
+        <h1> <%= @conversation.subject %> </h1>
+      </div>
+    
+      <% @conversation.receipts_for(current_user).each do |receipt| %>
+        <div class="sender-bubble-container">
+          <div><%= receipt.message.sender.name %>: </div>
+          
+            <div class="message-bubble-container">
+              <%= simple_format(receipt.message.body) %>
+            </div>
+        </div>
       <% end %>
+        
+    
     </div>
-
+  
+  
+    <div class="compose-message">
+      <%= form_tag conversation_messages_path(@conversation), method: :post do %>
+      <div>
+        <%= text_area_tag :body %>
+      </div>
+        <%= submit_tag "Send" %>
+      <%end%>
+    </div>
+    
+    
+  </div>
 </div>
 
 
-<%= form_tag conversation_messages_path(@conversation), method: :post do %>
-<div>
-  <%= text_area_tag :body %>
-</div>
-
-  <%= submit_tag %>
-<%end%>
