@@ -39,8 +39,48 @@
 
   <sessions>
     <session name="http-example" probability="100" type="ts_http">
+
+      <setdynvars sourcetype="random_number" start="0" end="10">
+        <var name="user_id" />
+      </setdynvars> 
+      
+      <!-- User visits home page -->
       <request>
         <http url='/' version='1.1' method='GET'></http>
+      </request>
+    
+      <!-- User visits login page -->
+      <request>
+        <http url='/users/sign_in' version='1.1' method='GET'></http>
+      </request>
+
+      <!-- User waits at login page for ~2 seconds, thinking of username and pass -->
+      <thinktime value="2" random="true"></thinktime>
+
+      <!-- User creates an account -->
+      <request subst="true">
+        <http url='/users/sign_in' version='1.1' method='POST'
+          content_type='application/x-www-form-urlencoded'
+          contents='user%5Bemail%5D=a%%_user_id%%@testcom&amp;user%5Bpassword%5D=111111'
+          ></http>
+      </request>
+
+      <!-- Waits 3 seconds for page to load -->
+      <thinktime value="3" random="true"></thinktime> 
+
+      <!-- User visits music page -->
+      <request>
+        <http url='/pages/music' version='1.1' method='GET'></http>
+      </request>
+
+      <!-- User likes a song -->
+      <request>
+        <http url='/song/like' version='1.1' method='POST'
+          content_type='application/x-www-form-urlencoded'
+          contents='song_id=0OvxrkpwsDsLit4R9RFbPV'></http>
+      </request>
+
+
       </request>
     </session>
   </sessions>
