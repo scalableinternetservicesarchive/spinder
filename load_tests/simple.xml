@@ -80,14 +80,15 @@
 
       <!-- User visits music page -->
       <request>
-        <http url='/pages/music' version='1.1' method='GET' contents='user_email=a0%40test.com'></http>
+        <http url='/pages/music?user_email=a0%40test.com' version='1.1' method='GET'></http>
       </request>
 
       <!-- User likes a song -->
       <request>
         <http url='/song/like' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
-          contents='song_id=0OvxrkpwsDsLit4R9RFbPV'></http>
+          contents='authenticity_token=%%_encoded_authenticity_token%%&amp;song_id=0OvxrkpwsDsLit4R9RFbPV'
+          ></http>
       </request>
 
     </session>
