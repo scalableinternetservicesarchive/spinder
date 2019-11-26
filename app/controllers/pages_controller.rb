@@ -18,6 +18,7 @@ class PagesController < ApplicationController
             FROM disliked_songs l JOIN song_infos r ON r.song_id = l.song_id
             WHERE l.user_email = '#{params["user_email"]}';
         """)
+        puts "Disliked songs: #{dislikedSongs}"
         #
         # #filter out all disliked songs (really inefficient)
         # @songs = @songs - dislikedSongs

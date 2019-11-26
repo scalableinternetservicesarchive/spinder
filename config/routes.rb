@@ -13,4 +13,5 @@ end
   get 'pages/profile' => 'pages#profile'
   get 'pages/messages' => 'conversations#index'
   post 'song/like' => 'song#like'
+  post 'song/dislike' => 'song#dislike'
 end

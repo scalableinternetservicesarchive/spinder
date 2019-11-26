@@ -10,7 +10,7 @@ class SongController < ApplicationController
     #handles when user presses 'dislike'
     def dislike
         object = DislikedSong.new(:user_email => current_user.email, :song_id => params["song_id"])
-        object.saves
+        object.save
         redirect_to controller: 'pages', action:'music', user_email: current_user.email
     end
 end

@@ -1,5 +1,5 @@
 <div class="music-body">
-     <%= link_to image_tag(asset_path("thumbsdown.png"), size: "300x200").html_safe, {:controller => "pages", :action => "music", :user_email => current_user.email} %>
+     <%= link_to image_tag(asset_path("thumbsdown.png"), size: "300x200").html_safe, {:controller => "song", :action => "dislike", :song_id => @song["song_id"]}, :method => :post %>
     <div class="music-song-container">
         <%= image_tag(@song['image_url'], :width => "50%") %>
         <p class="music-title"><%= @song['name'] %></p>
