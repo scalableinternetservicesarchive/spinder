@@ -1,0 +1,3 @@
+class DislikedSong < ApplicationRecord
+  
+end
