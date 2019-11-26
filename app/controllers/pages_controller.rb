@@ -5,21 +5,35 @@ class PagesController < ApplicationController
     # GET pages/music
     def music
 
-        # Get all songs from database
+        # Get all songs from database that the user has liked
         @songs = ActiveRecord::Base.connection.execute("""
             SELECT r.name, r.song_id
             FROM songs l JOIN song_infos r ON r.song_id = l.song_id
             WHERE l.user_email = '#{params["user_email"]}';
         """)
 
-        # Extract songs that user has already liked
-        song_liked = []
+        #get all songs that the user has disliked
+        dislikedSongs = ActiveRecord::Base.connection.execute("""
+            SELECT r.name, r.song_id
+            FROM disliked_songs l JOIN song_infos r ON r.song_id = l.song_id
+            WHERE l.user_email = '#{params["user_email"]}';
+        """)
+        #
+        # #filter out all disliked songs (really inefficient)
+        # @songs = @songs - dislikedSongs
+
+        # Extract songs that user has already liked and disliked to just get new songs
+        filter_songs = []
         for i in @songs
-            song_liked.push(i["song_id"])
+            filter_songs.push(i["song_id"])
         end
 
-        # Only pick a random song that the user HASNT liked before
-        @song = SongInfo.where.not(song_id: song_liked).order('RANDOM()').first
+        for i in dislikedSongs
+            filter_songs.push(i["song_id"])
+        end
+
+        # filter out the songs that we dont want to display
+        @song = SongInfo.where.not(song_id: filter_songs).order('RANDOM()').first
     end
 
     # GET pages/profile
