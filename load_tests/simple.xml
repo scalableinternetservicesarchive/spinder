@@ -53,7 +53,6 @@
       <request>
         <dyn_variable name="authenticity_token" ></dyn_variable>
         <http url='/users/sign_in' version='1.1' method='GET'></http>
-
       </request>
 
       <!-- User waits at login page for ~2 seconds, thinking of username and pass -->
@@ -90,6 +89,42 @@
         <http url='%%_song_url%%' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
           contents='authenticity_token=%%_authenticity_token%%'
+          ></http>
+      </request>
+
+      <!-- Waits 2 seconds -->
+      <thinktime value="2" random="true"></thinktime>
+
+      <!-- User visits profile -->
+      <request subst="true">
+        <http url='/pages/profile?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
+      </request>
+
+      <!-- User visits messages -->
+      <request subst="true">
+        <http url='/pages/messages' version='1.1' method='GET'></http>
+      </request>
+
+      <!-- User clicks on new conversation button -->
+      <request subst="true">
+        <dyn_variable name="authenticity_token" ></dyn_variable>
+        <dyn_variable name="receiver_id" xpath="//*[@id='user_email']/option/@value"></dyn_variable>
+        <http url='/conversations/new' version='1.1' method='GET'></http>
+      </request>
+
+      <!-- Encode authenticity token -->
+      <setdynvars
+        sourcetype="eval"
+        code="fun({Pid,DynVars})->{ok,Val}=ts_dynvars:lookup(authenticity_token,DynVars),http_uri:encode(Val) end."
+      >
+        <var name="encoded_authenticity_token" />
+      </setdynvars>
+
+      <!-- User submits form to send new message to their match -->
+      <request subst="true">
+        <http url='/conversations' version='1.1' method='POST'
+          content_type='application/x-www-form-urlencoded'
+          contents='authenticity_token=encoded_authencity_token&amp;user_email=%%_receiver_id%%&amp;subject=hello&amp;body=hello_world&amp;commit=Save+changes'
           ></http>
       </request>
 
