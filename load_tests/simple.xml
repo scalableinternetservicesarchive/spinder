@@ -80,7 +80,7 @@
       <!-- User visits music page -->
       <request subst="true">
         <dyn_variable name="authenticity_token" xpath="/html/head/meta[@name='csrf-token']/@content"></dyn_variable>
-        <dyn_variable name="song_url" xpath="/html/body/div[@class='music-body']/a[@rel='nofollow']/@href"></dyn_variable>
+        <dyn_variable name="song_url" xpath="/html/body/div[2]/a[2]/@href"></dyn_variable>
         <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
       </request>
 
@@ -124,7 +124,7 @@
       <request subst="true">
         <http url='/conversations' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
-          contents='authenticity_token=encoded_authencity_token&amp;user_email=%%_receiver_id%%&amp;subject=hello&amp;body=hello_world&amp;commit=Save+changes'
+          contents='authenticity_token=%%_encoded_authencity_token%%&amp;user_email=%%_receiver_id%%&amp;subject=hello&amp;body=hello_world&amp;commit=Save+changes'
           ></http>
       </request>
 
