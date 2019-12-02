@@ -40,7 +40,7 @@
   <sessions>
     <session name="http-example" probability="100" type="ts_http">
 
-      <setdynvars sourcetype="random_number" start="0" end="0">
+      <setdynvars sourcetype="random_number" start="0" end="999">
         <var name="user_id" />
       </setdynvars> 
       
