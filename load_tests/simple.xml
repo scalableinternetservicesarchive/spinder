@@ -124,7 +124,7 @@
       <request subst="true">
         <http url='/conversations' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
-          contents='authenticity_token=%%_encoded_authencity_token%%&amp;user_email=%%_receiver_id%%&amp;subject=hello&amp;body=hello_world&amp;commit=Save+changes'
+          contents='authenticity_token=%%_encoded_authenticity_token%%&amp;user_email=%%_receiver_id%%&amp;subject=hello&amp;body=hello_world&amp;commit=Save+changes'
           ></http>
       </request>
 
