@@ -9,7 +9,7 @@
 
   <!-- Server side setup -->
   <servers>
-    <server host="www.spinder2.e2zcqzrpxm.us-west-2.elasticbeanstalk.com" port="80" type="tcp"/>
+    <server host="www.spinder.e2zcqzrpxm.us-west-2.elasticbeanstalk.com" port="80" type="tcp"/>
   </servers>
 
 
@@ -70,7 +70,7 @@
       <request subst="true">
         <http url='/users/sign_in' version='1.1' method='POST'
           content_type='application/x-www-form-urlencoded'
-          contents='authenticity_token=%%_encoded_authenticity_token%%&amp;user%5Bemail%5D=a%%_user_id%%@test.com&amp;user%5Bpassword%5D=111111'
+          contents='authenticity_token=%%_encoded_authenticity_token%%&amp;user%5Bemail%5D=a%%_user_id%%@test.com&amp;user%5Bpassword%5D=123456'
           ></http>
       </request>
 
