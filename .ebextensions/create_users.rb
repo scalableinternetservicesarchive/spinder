@@ -8,7 +8,7 @@ def encrypt_pass(password)
 end
 
 values = ""
-100000.times { |n|
+500.times { |n|
     email = "a" + n.to_s + cur_user_domain
     encrypted_password = encrypt_pass('password')
     values.concat("('#{email}', '#{encrypted_password}', '#{Time.now}', '#{Time.now}'),")
