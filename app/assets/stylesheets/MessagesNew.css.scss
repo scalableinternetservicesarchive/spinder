@@ -1,0 +1,34 @@
+.messages-new-background {
+    background-image: url(asset_path("night_fade.png"));
+    overflow: scroll;
+    background-size: cover;
+}
+
+.messages-new-container {
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+}
+
+.email{
+    color: #27017E;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+.subject{
+    color: #27017E;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+.comment{
+    color: #27017E;
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+.send{
+    padding-left: 10px;
+}
