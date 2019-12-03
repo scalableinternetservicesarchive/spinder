@@ -53,18 +53,23 @@ class PagesController < ApplicationController
     for i in @songs
       song_id_arr.push(i["song_id"])
     end
+    
 
-    # Run query that computes the matches that a user has, sorted from greatest to least
-    @matches = ActiveRecord::Base.connection.execute("" "
+    #cache response on client side
+    # only generate fresh response when email changes or if songs liked changes
+    # fresh_when([@email, @songs])
+    if stale? ([@email, @songs])
+      respond_to do |format|
+        # Run query that computes the matches that a user has, sorted from greatest to least
+        @matches = ActiveRecord::Base.connection.execute("" "
                 SELECT user_email, COUNT(*) AS cnt
                 FROM songs
                 WHERE (song_id IN ('#{song_id_arr.join("', '")}')) AND user_email != '#{params["user_email"]}'
                 GROUP BY user_email
                 ORDER BY cnt DESC;
             " "")
-
-    #cache response on client side
-    # only generate fresh response when email changes or if songs liked changes
-    fresh_when([@email, @songs])
+        format.html
+      end
+    end
   end
 end
