@@ -100,12 +100,36 @@
         <http url='/pages/profile?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
       </request>
 
-      <!-- User visits messages -->
+      <!-- User reloads profile twice -->
+      <request subst="true">
+        <http url='/pages/profile?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
+      </request>
+      <request subst="true">
+        <http url='/pages/profile?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
+      </request>
+
+      <!-- User visits messages 3 times -->
+      <request subst="true">
+        <http url='/pages/messages' version='1.1' method='GET'></http>
+      </request>
+      <request subst="true">
+        <http url='/pages/messages' version='1.1' method='GET'></http>
+      </request>
       <request subst="true">
         <http url='/pages/messages' version='1.1' method='GET'></http>
       </request>
 
-      <!-- User clicks on new conversation button -->
+      <!-- User clicks on new conversation button 3 times -->
+      <request subst="true">
+        <dyn_variable name="authenticity_token" ></dyn_variable>
+        <dyn_variable name="receiver_id" xpath="//*[@id='user_email']/option/@value"></dyn_variable>
+        <http url='/conversations/new' version='1.1' method='GET'></http>
+      </request>
+      <request subst="true">
+        <dyn_variable name="authenticity_token" ></dyn_variable>
+        <dyn_variable name="receiver_id" xpath="//*[@id='user_email']/option/@value"></dyn_variable>
+        <http url='/conversations/new' version='1.1' method='GET'></http>
+      </request>
       <request subst="true">
         <dyn_variable name="authenticity_token" ></dyn_variable>
         <dyn_variable name="receiver_id" xpath="//*[@id='user_email']/option/@value"></dyn_variable>

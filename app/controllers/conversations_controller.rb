@@ -1,10 +1,12 @@
 class ConversationsController < ApplicationController
   def index
     @conversations = current_user.mailbox.conversations
+    fresh_when @conversations
   end
 
   def show
     @conversation = current_user.mailbox.conversations.find(params[:id])
+    fresh_when @conversation
   end
 
   # GET pages/profile
@@ -24,28 +26,32 @@ class ConversationsController < ApplicationController
         song_id_arr.push(i["song_id"])
       end
 
-      # Run query that computes the matches that a user has, sorted from greatest to least
-      matches = ActiveRecord::Base.connection.execute("""
+
+      if stale? ([songs])
+        # Run query that computes the matches that a user has, sorted from greatest to least
+        @matches = ActiveRecord::Base.connection.execute("""
                 SELECT user_email, COUNT(*) AS cnt
                 FROM songs
                 WHERE (song_id IN ('#{song_id_arr.join("', '")}')) AND user_email != '#{current_user.name}'
                 GROUP BY user_email
                 ORDER BY cnt DESC;
             """)
-      return matches
+      end
     else
-      return []
+      @matches = []
     end
   end
 
+  before_action :get_matches
   def new
     #TODO: replace this with one query to get matches
     matchedEmails = []
-    get_matches.each do |doc|
+
+    get_matches
+    @matches.each do |doc|
       matchedEmails.push(doc["user_email"])
     end
 
-    p matchedEmails
     @matchedUsers = []
     User.all.each do |user|
       if matchedEmails.include? user.email
