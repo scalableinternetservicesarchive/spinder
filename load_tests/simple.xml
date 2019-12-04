@@ -77,7 +77,17 @@
       <!-- Waits 3 seconds for page to load -->
       <thinktime value="3" random="true"></thinktime>
 
-      <!-- User visits music page -->
+      <!-- User visits music page 3 times -->
+      <request subst="true">
+        <dyn_variable name="authenticity_token" xpath="/html/head/meta[@name='csrf-token']/@content"></dyn_variable>
+        <dyn_variable name="song_url" xpath="/html/body/div[2]/a[2]/@href"></dyn_variable>
+        <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
+      </request>
+      <request subst="true">
+        <dyn_variable name="authenticity_token" xpath="/html/head/meta[@name='csrf-token']/@content"></dyn_variable>
+        <dyn_variable name="song_url" xpath="/html/body/div[2]/a[2]/@href"></dyn_variable>
+        <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
+      </request>
       <request subst="true">
         <dyn_variable name="authenticity_token" xpath="/html/head/meta[@name='csrf-token']/@content"></dyn_variable>
         <dyn_variable name="song_url" xpath="/html/body/div[2]/a[2]/@href"></dyn_variable>
