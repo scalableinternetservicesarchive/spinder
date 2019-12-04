@@ -79,8 +79,9 @@
 
       <!-- User visits music page 3 times -->
       <request subst="true">
-        <dyn_variable name="authenticity_token" xpath="/html/head/meta[@name='csrf-token']/@content"></dyn_variable>
-        <dyn_variable name="song_url" xpath="/html/body/div[2]/a[2]/@href"></dyn_variable>
+        <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
+      </request>
+      <request subst="true">
         <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
       </request>
       <request subst="true">
@@ -88,11 +89,14 @@
         <dyn_variable name="song_url" xpath="/html/body/div[2]/a[2]/@href"></dyn_variable>
         <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
       </request>
-      <request subst="true">
-        <dyn_variable name="authenticity_token" xpath="/html/head/meta[@name='csrf-token']/@content"></dyn_variable>
-        <dyn_variable name="song_url" xpath="/html/body/div[2]/a[2]/@href"></dyn_variable>
-        <http url='/pages/music?user_email=a%%_user_id%%@test.com' version='1.1' method='GET'></http>
-      </request>
+
+      <!-- Encode authenticity token -->
+      <setdynvars
+        sourcetype="eval"
+        code="fun({Pid,DynVars})->{ok,Val}=ts_dynvars:lookup(authenticity_token,DynVars),http_uri:encode(Val) end."
+      >
+        <var name="encoded_authenticity_token" />
+      </setdynvars>
 
       <!-- User likes a song -->
       <request subst="true">
@@ -131,18 +135,14 @@
 
       <!-- User clicks on new conversation button 3 times -->
       <request subst="true">
-        <dyn_variable name="authenticity_token" ></dyn_variable>
-        <dyn_variable name="receiver_id" xpath="//*[@id='user_email']/option/@value"></dyn_variable>
+        <http url='/conversations/new' version='1.1' method='GET'></http>
+      </request>
+      <request subst="true">
         <http url='/conversations/new' version='1.1' method='GET'></http>
       </request>
       <request subst="true">
         <dyn_variable name="authenticity_token" ></dyn_variable>
-        <dyn_variable name="receiver_id" xpath="//*[@id='user_email']/option/@value"></dyn_variable>
-        <http url='/conversations/new' version='1.1' method='GET'></http>
-      </request>
-      <request subst="true">
-        <dyn_variable name="authenticity_token" ></dyn_variable>
-        <dyn_variable name="receiver_id" xpath="//*[@id='user_email']/option/@value"></dyn_variable>
+        <dyn_variable name="receiver_id" xpath="//*[@id='user_email']/option[1]/@value"></dyn_variable>
         <http url='/conversations/new' version='1.1' method='GET'></http>
       </request>
 
