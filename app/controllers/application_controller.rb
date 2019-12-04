@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
               SELECT r.name, r.song_id, r.artist
               FROM songs l JOIN song_infos r ON r.song_id = l.song_id
               WHERE l.user_email = '#{params["user_email"]}';
-          " "")
+          " "").to_a
           end
           return liked_songs
         end
@@ -89,7 +89,7 @@ class ApplicationController < ActionController::Base
                 WHERE (song_id IN ('#{song_id_arr.join("', '")}')) AND user_email != '#{email}'
                 GROUP BY user_email
                 ORDER BY cnt DESC;
-            """)
+            """).to_a
         end
 
         return matches
