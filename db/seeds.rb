@@ -15,17 +15,24 @@ require "json"
 require "devise"
 require "bcrypt"
 
-# Load songs
-song_data = JSON.parse(File.read(File.dirname(__FILE__) + "/out.json"))["items"]
+song_data = JSON.parse(File.read(File.dirname(__FILE__) + "/all_songs.json"))["items"]
 
 for song in song_data do
+    
+    image_url_nf = 'https://sciences.ucf.edu/psychology/wp-content/uploads/sites/63/2019/09/No-Image-Available.png'
+    image = ''
+    if song["track"]["album"]["images"] == []
+        image = image_url_nf
+    else
+        image = song["track"]["album"]["images"][0]["url"]
+    end
     
     SongInfo.create({
         song_id: song["track"]["id"],
         name: song["track"]["name"],
         artist: song["track"]["artists"][0]["name"],
         sample_url: song["track"]["preview_url"],
-        image_url: song["track"]["album"]["images"][0]["url"]
+        image_url: image
     })
       
 end
